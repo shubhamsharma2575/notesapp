@@ -171,12 +171,13 @@ body{
 .menuli{
     display: grid;
     position: absolute;
-    padding-block: 16px;
+    margin-top: 20px;
+    padding-block: 0px;
     padding-inline: 1px;
     border-radius: 14px;
     opacity: 0;
     pointer-events: none;
-    margin-left: 19px;
+    margin-left: 10px;
 }
 
 .deletenote, .editnote{
@@ -384,7 +385,28 @@ body{
         font-size: 14px;
     }
 }
-
+@media screen and(max-width: 440px){
+    .notes{
+        flex-wrap: 1 1 30%;
+        max-width: 35%;
+    }
+    .deletenote, .editnote{
+        width: 55px;
+        font-size: 11px;
+    }
+    .menuli{
+        margin-left: -8px;
+        margin-top: 25px;
+    }
+    .popupbox{
+        height: 380px;
+        width: 80%;
+    }
+    .heading_div{
+        font-size: 11px;
+    }
+}
+        
 
 @media screen and (max-width: 352px){
     .notes{
