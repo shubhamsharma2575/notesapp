@@ -171,13 +171,13 @@ body{
 .menuli{
     display: grid;
     position: absolute;
-    margin-top: 20px;
+    margin-top: 25px;
     padding-block: 0px;
-    padding-inline: 1px;
+    padding-inline: 0px;
     border-radius: 14px;
     opacity: 0;
     pointer-events: none;
-    margin-left: 10px;
+    margin-left: 6px;
 }
 
 .deletenote, .editnote{
@@ -357,61 +357,58 @@ body{
 
 
 
+
 @media screen and (max-width: 800px){
     .notes{
-        flex-wrap: 1 1 20%;
-        max-width: 20%;
+        flex-wrap: 1 1 30%;
+        max-width: 40%;
+    }
+    .menuli{
+        margin-left: 0px;
     }
     .deletenote, .editnote{
-        width: 45px;
-        font-size: 11px;
+        width: 55px;
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width: 685px){
     .notes{
         flex-wrap: 1 1 30%;
-        max-width: 35%;
-    }
-    .deletenote, .editnote{
-        width: 55px;
-        font-size: 14px;
-    }
-    .popupbox{
-        height: 380px;
-        width: 80%;
-    }
-    .heading_div{
-        font-size: 14px;
-    }
-}
-@media screen and(max-width: 440px){
-    .notes{
-        flex-wrap: 1 1 30%;
-        max-width: 35%;
-    }
-    .deletenote, .editnote{
-        width: 55px;
-        font-size: 11px;
+        max-width: 41%;
+        margin: 10px;
     }
     .menuli{
-        margin-left: -8px;
-        margin-top: 25px;
+        margin-left: -5px;
+    }
+    .deletenote, .editnote{
+        width: 65px;
+        font-size: 14px;
     }
     .popupbox{
         height: 380px;
         width: 80%;
     }
     .heading_div{
-        font-size: 11px;
+        font-size: 14px;
     }
 }
-        
 
-@media screen and (max-width: 352px){
+
+@media screen and (max-width: 500px){
+    .menuli{
+        margin-left: -31px;
+    }
+}
+
+
+@media screen and (max-width: 400px){
     .notes{
-        flex-wrap: 1 1 30%;
-        max-width: 50%;
+        flex-wrap: 1 1 40%;
+        max-width: 41%;
+    }
+    .menuli{
+        margin-left: -31px;
     }
     .deletenote, .editnote{
         width: 60px;
@@ -422,7 +419,8 @@ body{
         width: 80%;
     }
     .heading_div{
-        font-size: 16px;
+        font-size: 13px;
+        font-weight: bolder;
     }
 }
 
