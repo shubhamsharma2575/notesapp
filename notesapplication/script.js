@@ -11,6 +11,8 @@ var editform = document.querySelector(".editform")
 var darkbutton = document.querySelector(".toogle")
 var editid = null
 
+
+
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 
@@ -41,20 +43,13 @@ function closepopuponclick() {
 }
 closepopuponclick();
 
-//chek
-document.addEventListener("DOMContentLoaded", function(){
-    if(stored_note){
-        displaynotes()
-    }
-})
-
 
 document.addEventListener("DOMContentLoaded", function () {
     let Note = JSON.parse(localStorage.getItem("Note")) || [];
     Note.forEach(note => creatingnote(note.id, note.data.title, note.data.para, note.data.date));
-
-
 })
+window.onload = loaddark;
+
 // local storage work
 function store_to_localstorage(noteid, notedata) {
     let Note = JSON.parse(localStorage.getItem("Note")) || [];
@@ -68,6 +63,36 @@ function update_note_storage(noteid, updateddata) {
     Note = Note.map(note => note.id === noteid ? { id: noteid, data: updateddata } : note);
     console.log(Note)
     localStorage.setItem("Note", JSON.stringify(Note))
+}
+
+function chekboxcheked(){
+    const dark = document.getElementById("chek")
+    localStorage.setItem("ischecked", dark.checked);
+    if (dark.checked) {
+        document.querySelector(".header").classList.add("darkmode_header")
+        document.querySelector("body").classList.add("darkmode_body")
+        popupbox.classList.add("darkmode_popupbox")
+        notesplace.classList.add("darkmode_notes")
+    }
+    else {
+        document.querySelector(".header").classList.remove("darkmode_header")
+        document.querySelector("body").classList.remove("darkmode_body")
+        popupbox.classList.remove("darkmode_popupbox")
+        notesplace.classList.remove("darkmode_notes")
+    }
+}
+function loaddark(){
+    const dark = document.getElementById("chek")
+    const ischecked = localStorage.getItem("ischecked");
+    if(ischecked != null){
+        dark.checked = (ischecked === "true");
+        if (dark.checked) {
+            document.querySelector(".header").classList.add("darkmode_header")
+            document.querySelector("body").classList.add("darkmode_body")
+            popupbox.classList.add("darkmode_popupbox")
+            notesplace.classList.add("darkmode_notes")
+        }
+    }
 }
 
 function creatingnote(id, title, para, date) {
@@ -176,7 +201,7 @@ function creatingnote(id, title, para, date) {
         li.classList.remove("show");
         editform.classList.add("show")
         editid = notes.id
-
+      
     });
 
 
@@ -287,24 +312,8 @@ closeicon.addEventListener("click", function () {
 
 
 
-//impleament darkmode
-var dark = document.getElementById("chek")
-dark.addEventListener('change', function () {
-    if (this.checked) {
-        document.querySelector(".header").classList.add("darkmode_header")
-        document.querySelector("body").classList.add("darkmode_body")
-        popupbox.classList.add("darkmode_popupbox")
-        notesplace.classList.add("darkmode_notes")
-    }
-    else {
-        document.querySelector(".header").classList.remove("darkmode_header")
-        document.querySelector("body").classList.remove("darkmode_body")
-        popupbox.classList.remove("darkmode_popupbox")
-        notesplace.classList.remove("darkmode_notes")
-    }
-})
-
-
+// impleament darkmode       
+document.getElementById("chek").addEventListener('change', chekboxcheked);
 
 
 
