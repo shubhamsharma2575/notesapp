@@ -389,7 +389,7 @@ body {
 .darkmode_notes {
     .notes {
         background-color: rgb(10, 10, 10);
-        box-shadow: 0 0 px grey;
+        box-shadow: 0 0 2px grey;
     }
 
     .notes:hover {
