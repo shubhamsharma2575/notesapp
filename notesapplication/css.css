@@ -1,45 +1,53 @@
-
-
-body{
+body {
     display: flex;
     background-color: rgb(122, 121, 121);
-}
-.darkmode_body{
-    background-color: rgb(46, 46, 46);
-}
-.header{
-  background-color: skyblue;
-  top: 0px;
-  position: fixed;
-  width: 100%;
-  left: 0px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-.darkmode_header{
-    background-color: black;
-    color: white;
+    transition: all ease 0.5s;
 }
 
-.toogle{
-    position: absolute;
-    right: 10px;   
+.darkmode_body {
+    background-color: rgb(10, 10, 10);
 }
-#chek{
+
+.header {
+    background-color: skyblue;
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: all ease 0.5s;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+.darkmode_header {
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 8px rgb(47, 47, 47);
+}
+
+.toogle {
+    position: absolute;
+    right: 10px;
+}
+
+#chek {
     display: none;
 }
-.darkbutton{
+
+.darkbutton {
     display: block;
     background-color: skyblue;
     height: 15px;
     width: 30px;
     border-radius: 100px;
-    border:1px solid black;
+    border: 1px solid black;
 }
-.darkbutton::before{
+
+.darkbutton::before {
     content: "";
     height: 11px;
     width: 11px;
@@ -52,17 +60,19 @@ body{
     border-radius: 50%;
     transition: all 0.4s ease;
 }
-#chek:checked + .darkbutton::before{
+
+#chek:checked+.darkbutton::before {
     transform: translateX(14px);
     background-color: rgb(255, 255, 255);
 }
-#chek:checked + .darkbutton{
+
+#chek:checked+.darkbutton {
     background-color: black;
     border: 1px solid rgb(255, 255, 255);
     transition: all 0.4s ease;
 }
 
-.bottom-button{
+.bottom-button {
     position: fixed;
     margin-bottom: 0px;
     bottom: 0px;
@@ -73,7 +83,7 @@ body{
     padding: 0px;
 }
 
-.addbutton{
+.addbutton {
     position: relative;
     background-color: yellow;
     height: 60px;
@@ -86,22 +96,23 @@ body{
     left: 8px;
 }
 
-.clear{
+.clear {
     background: transparent;
     border: none;
     color: whitesmoke;
     padding-block: 3px;
     font-size: 35px;
 }
-.clear:hover{
+
+.clear:hover {
     color: black;
 }
 
-.clear:active{
+.clear:active {
     color: red;
 }
 
-.notesplace{
+.notesplace {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -110,23 +121,27 @@ body{
     right: 0px;
     justify-content: center;
     gap: 20px;
+    transition: all ease 0.5s;
 }
 
-.notes{
+.notes {
     border-radius: 15px;
     background-color: rgb(243, 241, 241);
     height: 200px;
     width: 200px;
-    margin: 20px;  
+    margin: 20px;
     /* position: relative; */
     justify-content: center;
-    transition: all 0.01s ;
+    transition: all 0.01s;
     overflow: auto;
     opacity: 0.6;
+    transition: all ease 0.5s;
+    box-shadow: 0 0 15px rgb(107, 107, 107);
 }
-.notes:hover{
-    opacity: 1;
-    box-shadow: 0px 0px 4px white;
+
+.notes:hover {
+    opacity: 0.9;
+    box-shadow: 0px 0px 2px white;
 }
 
 /* .notesplace>.notes:active{
@@ -137,38 +152,44 @@ body{
     top: 50%;
     right: 50%;
     } */
-    
-    .notesplace>.notes>.heading_div{
-        background-color: rgb(174, 174, 174);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-inline: 5px;
-        padding-block: 0px;
-        margin: 0px;
-        height: auto;
-    color : white;   
+
+.notesplace>.notes>.heading_div {
+    background-color: rgb(174, 174, 174);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 5px;
+    padding-block: 0px;
+    margin: 0px;
+    height: auto;
+    color: white;
     overflow: auto;
+    transition: all  ease 0.5s;
 }
 
 
-.notesplace>.notes>.heading_div>.heading_div_right{
+.notesplace>.notes>.heading_div>.heading_div_right {
     display: ruby;
+    transition: all  ease 0.5s;
 }
 
-.dropmenu{   
+.dropmenu {
     display: flex;
     list-style-type: none;
     padding-inline: 8px;
     font-weight: bold;
+    transition: all  ease 0.5s;
 }
-.dropmenu>.menu{
+
+.dropmenu>.menu {
     font-size: 20px;
     background: transparent;
     border: none;
     pointer-events: all;
+    transition: all  ease 0.5s;
 }
-.menuli{
+
+.menuli {
     display: grid;
     position: absolute;
     margin-top: 25px;
@@ -178,9 +199,11 @@ body{
     opacity: 0;
     pointer-events: none;
     margin-left: 6px;
+    transition: all  ease 0.5s;
 }
 
-.deletenote, .editnote{
+.deletenote,
+.editnote {
     color: rgb(11, 11, 11);
     width: 60px;
     padding-inline: 2px;
@@ -189,20 +212,26 @@ body{
     padding: 0%;
     font-size: 15px;
     font-style: normal;
-    border: 0px solid rgb(50, 50, 50); 
+    border: 0px solid rgb(50, 50, 50);
     box-shadow: 0px 0px 16px rgb(160, 160, 160);
-    
+    transition: all  ease 0.5s;
+
 }
 
-.notesplace>.notes> .note_preview{
+.notesplace>.notes>.note_preview {
     padding-inline: 10px;
+    transition: all  ease 0.5s;
 }
-.notesplace>.notes> .note_preview>h3{
-    margin-top:10px;
+
+.notesplace>.notes>.note_preview>h3 {
+    margin-top: 10px;
     margin-bottom: 10px;
+    transition: all  ease 0.5s;
 }
-.notesplace>.notes> .note_preview > p{
+
+.notesplace>.notes>.note_preview>p {
     color: rgb(106, 106, 106);
+    transition: all  ease 0.5s;
 }
 
 
@@ -210,11 +239,11 @@ body{
 
 
 
-.popupbox{
+.popupbox {
     z-index: 1;
     top: 50%;
     right: 50%;
-    transform: translate(50%,-33%);
+    transform: translate(50%, -33%);
     position: fixed;
     opacity: 0;
     width: 400px;
@@ -225,11 +254,11 @@ body{
     border-radius: 10px;
     overflow: auto;
     pointer-events: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 
-.popup_title{
+.popup_title {
     position: relative;
     display: flex;
     align-items: center;
@@ -239,47 +268,55 @@ body{
     background-color: skyblue;
     padding-block: 0px;
     color: white;
+    transition: all  ease 0.5s;
 }
 
-.popup_title>i{
+.popup_title>i {
     color: rgb(237, 123, 123);
     font-weight: lighter;
+    transition: all  ease-in-out 0.2s;
 }
 
-.popup_title>i:hover{
+.popup_title>i:hover {
     color: rgb(255, 0, 0);
     font-weight: lighter;
 }
-.popup_title>i:active{
-    font-size:smaller;
+
+.popup_title>i:active {
+    font-size: smaller;
 }
 
-.popup_content, .popup_note{
+.popup_content,
+.popup_note {
     display: grid;
     padding: 5px 10px;
     font-size: 20px;
     margin-top: 0px;
+    transition: all  ease 0.5s;
 }
-.popup_content>label, .popup_note>label{
+
+.popup_content>label,
+.popup_note>label {
     font-weight: 700;
 }
 
-.popup_content>input{
+.popup_content>input {
     height: 25px;
     font-weight: bolder;
 }
 
-.popup_note>textarea{
+.popup_note>textarea {
     height: 130px;
 }
 
-.bottomofform{
+.bottomofform {
     display: flex;
     justify-content: right;
     margin-top: 10px;
 }
 
-.addform, .editform{
+.addform,
+.editform {
     color: white;
     background-color: grey;
     border: none;
@@ -289,140 +326,179 @@ body{
     margin-inline: 5px;
     padding-inline: 15px;
     padding-block: 5px;
+    transition: all  ease 0.5s;
 }
-.addform:hover, .editform:hover{
+
+.addform:hover,
+.editform:hover {
     color: aqua;
 }
-.addform:active, .editform:active{
+
+.addform:active,
+.editform:active {
     font-size: smaller;
 }
 
-.editform{
+.editform {
     display: none;
-    
+
     pointer-events: none;
 }
-.editform.show{
+
+.editform.show {
     display: block;
 }
 
-.show{
+.show {
     opacity: 1;
     pointer-events: all;
     transition: all 0.2s ease-in-out;
 }
 
-.darkmode_popupbox{
-    background-color:  rgb(26, 25, 25);
-    .popup_title{
+.darkmode_popupbox {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 2px grey;
+
+    .popup_title {
         background-color: rgb(7, 7, 7);
+        box-shadow: 0 0 5px grey;
     }
-    .addform, .editform{
+
+    .addform,
+    .editform {
         border: 1px solid white;
         background-color: rgb(0, 0, 0);
     }
-    .popup_content>label , .popup_note>label{
+
+    .popup_content>label,
+    .popup_note>label {
         color: white;
     }
-    .popup_content>input , .popup_note> textarea{
-        background-color: rgb(32, 31, 31);
+
+    .popup_content>input,
+    .popup_note>textarea {
+        margin-top: 3px;
+        background-color: rgb(20, 20, 20);
+        color: white;
+        border: none;
+        box-shadow: 0px 0px 3px grey;
+    }
+}
+
+
+.darkmode_notes {
+    .notes {
+        background-color: rgb(10, 10, 10);
+        box-shadow: 0 0 px grey;
+    }
+
+    .notes:hover {
+        box-shadow: 0 0 4px grey;
+    }
+
+    .notes>.heading_div {
+        background-color: rgb(0, 0, 0);
+        box-shadow: 0 0 7px rgb(47, 47, 47);
+    }
+
+    .notes>.note_preview>p,
+    .notes>.note_preview>h3 {
+        color: white;
+    }
+
+    .dropmenu>.menu {
+        color: white;
+    }
+
+    .deletenote,
+    .editnote {
+        box-shadow: 0px 0px 5px rgb(81, 81, 81);
+        background-color: black;
         color: white;
     }
 }
 
 
-.darkmode_notes{
-    .notes{
-    background-color: rgb(123, 123, 123);
-    }
-    .notes:hover{        
-        box-shadow: 0 0 8px black;
-    }
-    .notes>.heading_div{
-        background-color: rgb(56, 57, 34);
-    }
-    .notes>.note_preview>p{
-        color: white;
-    }
-    .dropmenu>.menu{
-        color: white;
-    }
-    .deletenote, .editnote{
-        box-shadow: 0px 0px 26px black;
-    }
-}
 
 
 
 
 
-
-
-@media screen and (max-width: 800px){
-    .notes{
+@media screen and (max-width: 800px) {
+    .notes {
         flex-wrap: 1 1 30%;
         max-width: 40%;
     }
-    .menuli{
+
+    .menuli {
         margin-left: 0px;
     }
-    .deletenote, .editnote{
+
+    .deletenote,
+    .editnote {
         width: 55px;
         font-size: 14px;
     }
 }
 
-@media screen and (max-width: 685px){
-    .notes{
+@media screen and (max-width: 685px) {
+    .notes {
         flex-wrap: 1 1 30%;
         max-width: 41%;
         margin: 10px;
     }
-    .menuli{
+
+    .menuli {
         margin-left: -5px;
     }
-    .deletenote, .editnote{
+
+    .deletenote,
+    .editnote {
         width: 65px;
         font-size: 14px;
     }
-    .popupbox{
+
+    .popupbox {
         height: 380px;
         width: 80%;
     }
-    .heading_div{
+
+    .heading_div {
         font-size: 14px;
     }
 }
 
 
-@media screen and (max-width: 500px){
-    .menuli{
+@media screen and (max-width: 500px) {
+    .menuli {
         margin-left: -31px;
     }
 }
 
 
-@media screen and (max-width: 400px){
-    .notes{
+@media screen and (max-width: 400px) {
+    .notes {
         flex-wrap: 1 1 40%;
         max-width: 41%;
     }
-    .menuli{
+
+    .menuli {
         margin-left: -31px;
     }
-    .deletenote, .editnote{
+
+    .deletenote,
+    .editnote {
         width: 60px;
         font-size: 15px;
     }
-    .popupbox{
+
+    .popupbox {
         height: 380px;
         width: 80%;
     }
-    .heading_div{
+
+    .heading_div {
         font-size: 13px;
         font-weight: bolder;
     }
 }
-
-
-
