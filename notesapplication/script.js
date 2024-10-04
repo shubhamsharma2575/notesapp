@@ -27,6 +27,16 @@ function closepopuponclick() {
                 }
             }
         }
+        const isClickOnEditNoteButton = Array.from(document.querySelectorAll('.editnote')).some(button => button.contains(event.target));
+                if (notesplace.childElementCount > 0) {
+                    if (!popupbox.contains(event.target) &&
+                        !isClickOnEditNoteButton &&
+                        // !editnote.contains(event.target) && 
+                        !darkbutton.contains(event.target) &&
+                        !addbutton.contains(event.target)) {
+                        popupbox.classList.remove("show")
+                    }
+                }
     })
 }
 closepopuponclick();
@@ -167,45 +177,6 @@ function creatingnote(id, title, para, date) {
         editform.classList.add("show")
         editid = notes.id
 
-
-        // // Edit note on form submission
-        // editform.onclick = function () {
-        //     h3.innerText = titleofnote.value;
-        //     note_value.innerText = contentofform.value;
-        //     popuptitle.innerText = "Make New Note ";
-        //     console.log(updatedNote)
-
-        //     // local storage work
-        //     if (editid !== null) {
-        //         var updatedNote = {
-        //             "id": editid,
-        //             "date": noteno.innerText,
-        //             "title": titleofnote.value,
-        //             "para": contentofform.value
-        //         }
-        //     }
-        //     update_note_storage(editid, updatedNote)
-
-        //     popupbox.classList.remove("show");
-        //     editform.classList.remove("show");
-
-
-        // };
-
-        document.addEventListener("click", function (event) {
-            if (popupbox.classList.contains("show")) {
-                const isClickOnEditNoteButton = Array.from(document.querySelectorAll('.editnote')).some(button => button.contains(event.target));
-                if (notesplace.childElementCount > 0) {
-                    if (!popupbox.contains(event.target) &&
-                        !isClickOnEditNoteButton &&
-                        // !editnote.contains(event.target) && 
-                        !darkbutton.contains(event.target) &&
-                        !addbutton.contains(event.target)) {
-                        popupbox.classList.remove("show")
-                    }
-                }
-            }
-        })
     });
 
 
